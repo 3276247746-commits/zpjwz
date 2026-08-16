@@ -32,7 +32,7 @@ export default function Home() {
         <div className="hero-spark hero-spark-a">+</div><div className="hero-spark hero-spark-b">+</div><div className="hero-spark hero-spark-c">✦</div>
         <header className="nav-wrap">
           <a className="wordmark" href="#home"><i>H</i><span>HUANG<br />DANQI</span></a>
-          <nav aria-label="主导航"><a className="nav-active" href="#home">首页</a><a href="#about">个人经历</a><a href="#work">精选项目</a><a href="#strength">个人优势</a></nav>
+          <nav aria-label="主导航"><a className="nav-active" href="#home">首页</a><a href="#about">个人介绍</a><a href="#reel">作品混剪</a><a href="#work">精选项目</a><a href="#strength">个人优势</a></nav>
           <a className="nav-contact" href="#contact">联系我 <b>+</b></a>
         </header>
         <div className="hero-inner frame">
@@ -69,14 +69,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experience section frame">
-        <div className="section-number">02 <span>— EXPERIENCE</span></div>
-        <div className="experience-heading"><h2>经历是我构建<br /><em>审美与方法的素材库。</em></h2><p>从校园设计竞赛到 AI 视频制作，我不断在真实项目中探索动画、技术与叙事的交点。</p></div>
-        <div className="timeline">
-          <article><div className="time">2026.06 — 2026.08</div><div><p className="role">AI 视频制作剪辑 <span>深圳优明环球科技有限公司</span></p><h3>把品牌想法转译成可传播的动态内容</h3><p className="experience-summary">使用 AI 生成工具完成文生图、图生图、文生视频与动态效果优化；结合品牌调性撰写脚本、设计分镜，并通过 After Effects、剪映完成剪辑、调色与音效合成。</p><ul className="experience-points"><li>AI 视频全流程制作：运用 AI 生成工具（如 ChatGPT、Gemini、可灵等）完成从概念到成片的视频生产，涵盖文生图、图生图、文生视频、图生视频及动态效果优化。</li><li>脚本与分镜设计：结合品牌调性与传播目标，撰写创意脚本，设计视觉分镜，确保 AI 生成内容与叙事逻辑高度契合；后期剪辑与精修：使用 After Effects 和剪映进行视频剪辑、调色、音效合成及动态图形设计，提升成片质感与传播力。</li></ul></div></article>
-          <article><div className="time">2025.12 — 2026.06</div><div><p className="role">动画设计师 / AI 漫剧制作 <span>深圳市凯乐新联文化科技有限公司</span></p><h3>以角色、场景和动作，搭起一个动画世界</h3><p className="experience-summary">参与《萌萌马之神缘兄弟》第二季动画绑定与动作设计，负责角色、道具、场景设计及 AI 动画视频制作，独立完成美术设计到成片输出的流程。</p><ul className="experience-points"><li>负责《萌萌马之神缘兄弟》第二季动画剧集的动画绑定与动作设计，确保角色生动形象、动作流畅；参与项目创意策划，提出创新性的角色与场景设计方案，为作品注入新鲜元素。</li><li>负责 AI 漫剧《别惹我，我防御拉满》的角色、道具、场景设计以及 AI 动画视频制作，独立完成从美术设计到成片输出全流程，保障内容质量与产出效率。</li></ul></div></article>
-          <article><div className="time">2023 — 2026</div><div><p className="role">校园经历 <span>设计与美术 / 团队合作与领导</span></p><h3>在竞赛与社团中扩展表达的边界</h3><p className="experience-summary">从视觉设计、动画创作到舞队管理与赛事协作，在校园项目与竞赛中持续积累表达力、组织力和团队协作能力。</p><div className="experience-groups"><div><h4>2024—2025 · 设计与美术</h4><ul className="experience-points"><li>第十六届蓝桥杯大赛视觉艺术设计赛省赛：参加海报设计，荣获“三等奖”；大学生广告艺术大赛：参加二维动画创作，荣获“三等奖”。</li><li>AIGC 中澳杯短视频创作大赛：负责资产设计和分镜脚本设计；学术奖学金：连续获得三次校内奖学金。</li><li>三好学生：2024—2025 学年，在校获“三好学生”称号。</li></ul></div><div><h4>2023—2026 · 团队合作与领导</h4><ul className="experience-points"><li>学校街舞协会 Jazz 队队长：担任校街舞协会 Jazz 队队长，统筹队员排训与社团活动，提升团队整体表现与凝聚力。</li><li>参加第 18 届中国大学生健美操锦标赛“自由风格街舞”812 人齐舞，荣获“二等奖”“一等奖”；参加 2025 年广东省大学生街舞锦标赛“freestyle 齐舞”，荣获“二等奖”。</li><li>参加 2026 年全国啦啦操联赛“集体自由爵士”，荣获“第二名”；参加 2026 年 O!MA 大湾区高校街舞联赛，荣获齐舞大赛“第七名”。</li></ul></div></div></div></article>
-        </div>
+      <section className="reel section" id="reel">
+        <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><h2>把所有画面，<br /><em>剪成一段心跳。</em></h2><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
       </section>
 
       <section className="skills section"><div className="frame"><div className="section-number">03 <span>— TOOLS & SKILLS</span></div><div className="skill-layout"><h2>工具只是延伸，<br /><em>想法才是核心。</em></h2><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div></div></section>
