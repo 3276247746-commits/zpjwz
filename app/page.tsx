@@ -60,8 +60,8 @@ export default function Home() {
         <div className="section-number">02 <span>— EXPERIENCE</span></div>
         <div className="experience-heading"><h2>经历是我构建<br /><em>审美与方法的素材库。</em></h2><p>从校园设计竞赛到 AI 视频制作，我不断在真实项目中探索动画、技术与叙事的交点。</p></div>
         <div className="timeline">
-          <article><div className="time">2026.06 — 2026.08</div><div><p className="role">AI 视频制作剪辑 <span>深圳优明环球科技有限公司</span></p><h3>把品牌想法转译成可传播的动态内容</h3><p>使用 AI 生成工具完成文生图、图生图、文生视频与动态效果优化；结合品牌调性撰写脚本、设计分镜，并通过 After Effects、剪映完成剪辑、调色与音效合成。</p></div></article>
-          <article><div className="time">2025.12 — 2026.06</div><div><p className="role">动画设计师 / AI 漫剧制作 <span>深圳市凯乐新联文化科技有限公司</span></p><h3>以角色、场景和动作，搭起一个动画世界</h3><p>参与《萌萌马之神缘兄弟》第二季动画绑定与动作设计，负责角色、道具、场景设计及 AI 动画视频制作，独立完成美术设计到成片输出的流程。</p></div></article>
+          <article><div className="time">2026.06 — 2026.08</div><div><p className="role">AI 视频制作剪辑 <span>深圳优明环球科技有限公司</span></p><h3>把品牌想法转译成可传播的动态内容</h3><p className="experience-summary">使用 AI 生成工具完成文生图、图生图、文生视频与动态效果优化；结合品牌调性撰写脚本、设计分镜，并通过 After Effects、剪映完成剪辑、调色与音效合成。</p><ul className="experience-points"><li>AI 视频全流程制作：运用 AI 生成工具（如 ChatGPT、Gemini、可灵等）完成从概念到成片的视频生产，涵盖文生图、图生图、文生视频、图生视频及动态效果优化。</li><li>脚本与分镜设计：结合品牌调性与传播目标，撰写创意脚本，设计视觉分镜，确保 AI 生成内容与叙事逻辑高度契合；后期剪辑与精修：使用 After Effects 和剪映进行视频剪辑、调色、音效合成及动态图形设计，提升成片质感与传播力。</li></ul></div></article>
+          <article><div className="time">2025.12 — 2026.06</div><div><p className="role">动画设计师 / AI 漫剧制作 <span>深圳市凯乐新联文化科技有限公司</span></p><h3>以角色、场景和动作，搭起一个动画世界</h3><p className="experience-summary">参与《萌萌马之神缘兄弟》第二季动画绑定与动作设计，负责角色、道具、场景设计及 AI 动画视频制作，独立完成美术设计到成片输出的流程。</p><ul className="experience-points"><li>负责《萌萌马之神缘兄弟》第二季动画剧集的动画绑定与动作设计，确保角色生动形象、动作流畅；参与项目创意策划，提出创新性的角色与场景设计方案，为作品注入新鲜元素。</li><li>负责 AI 漫剧《别惹我，我防御拉满》的角色、道具、场景设计以及 AI 动画视频制作，独立完成从美术设计到成片输出全流程，保障内容质量与产出效率。</li></ul></div></article>
           <article><div className="time">2024 — 2026</div><div><p className="role">校园经历 <span>设计与美术 / 团队合作与领导</span></p><h3>在竞赛与社团中扩展表达的边界</h3><p>获得蓝桥杯视觉艺术设计赛省赛二等奖、大广赛二等奖等；担任 Jazz 舞队队长，负责成员排训、社团活动与团队协作。</p></div></article>
         </div>
       </section>
