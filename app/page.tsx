@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+
 const projectGroups = [
   { id: "01", title: "AIGC 设计", en: "AIGC DESIGN", intro: "从 AI 漫剧到真人短剧与商业视频，探索生成式影像的叙事和表达。", projects: [
     ["01", "AI 漫剧《别惹我，我防御拉满》", "角色 / 道具 / 场景设计", "/neural.jpg", "violet"],
@@ -31,6 +33,9 @@ function MagicTitle({ first, second }: { first: string; second: string }) {
 }
 
 export default function Home() {
+  const rails = useRef<Array<HTMLDivElement | null>>([]);
+  const scrollRail = (index: number, direction: number) => rails.current[index]?.scrollBy({ left: direction * 390, behavior: "smooth" });
+
   return (
     <main>
       <section className="hero" id="home">
@@ -83,7 +88,7 @@ export default function Home() {
       <section className="work section frame" id="work">
         <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
         <div className="work-heading"><MagicTitle first="三种方向，" second="同一种创作热情。" /><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
-        <div className="project-groups">{projectGroups.map((group) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>横向滑动浏览　→</small></div><div className="project-rail-wrap"><div className="project-rail">{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></div></section>)}</div>
+        <div className="project-groups">{projectGroups.map((group, groupIndex) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>点击两侧箭头浏览　→</small></div><div className="project-rail-wrap"><button className="rail-arrow rail-arrow-left" type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div><button className="rail-arrow rail-arrow-right" type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div></section>)}</div>
       </section>
 
       <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><MagicTitle first="我的优势，" second="不止于熟练。" /><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
