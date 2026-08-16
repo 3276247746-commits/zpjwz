@@ -15,21 +15,25 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="home">
-        <video className="hero-video" autoPlay muted loop playsInline poster="/hero.jpg" aria-label="抽象流动视觉背景">
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-shade" />
+        <div className="hero-dots hero-dots-a" /><div className="hero-dots hero-dots-b" />
+        <div className="hero-spark hero-spark-a">+</div><div className="hero-spark hero-spark-b">+</div><div className="hero-spark hero-spark-c">✦</div>
         <header className="nav-wrap">
           <a className="wordmark" href="#home"><i>H</i><span>HUANG<br />DANQI</span></a>
-          <nav aria-label="主导航"><a href="#about">个人经历</a><a href="#work">精选项目</a><a href="#strength">个人优势</a></nav>
-          <a className="nav-contact" href="#contact">联系我 <b>↗</b></a>
+          <nav aria-label="主导航"><a className="nav-active" href="#home">首页</a><a href="#about">个人经历</a><a href="#work">精选项目</a><a href="#strength">个人优势</a></nav>
+          <a className="nav-contact" href="#contact">联系我 <b>+</b></a>
         </header>
         <div className="hero-inner frame">
-          <p className="hero-kicker">PORTFOLIO / 2026 &nbsp; · &nbsp; SHENZHEN</p>
-          <h1>让想象成为<br /><em>会呼吸的画面。</em></h1>
-          <p className="hero-intro">黄丹琦 / AI 设计师 · 动画设计师<br />以 AIGC、动画与视觉叙事，回应每一个新鲜的想法。</p>
-          <div className="hero-actions"><a className="primary-btn" href="#work">浏览作品 <span>↓</span></a><a className="round-play" href="#about" aria-label="认识黄丹琦">↘</a></div>
+          <div className="hero-copy">
+            <p className="hero-kicker">PORTFOLIO / 2026 &nbsp; · &nbsp; SHENZHEN</p>
+            <h1>让想象成为<br /><em>会呼吸的画面。</em></h1>
+            <p className="hero-intro">黄丹琦 / AI 设计师 · 动画设计师<br />以 AIGC、动画与视觉叙事，回应每一个新鲜的想法。</p>
+            <div className="hero-actions"><a className="primary-btn" href="#work">浏览作品 <span>↓</span></a><a className="round-play" href="#about" aria-label="认识黄丹琦">↘</a></div>
+          </div>
+          <div className="hero-character"><div className="character-arch"><img src="/hero-character.png" alt="粉色花卉主题角色视觉" /></div><div className="orbit orbit-a" /><div className="orbit orbit-b" /></div>
         </div>
+        <aside className="hero-card profile-mini"><small>CREATIVE PROFILE</small><strong>AI × MOTION</strong><p>为想法注入节奏<br />与明亮的想象力。</p><span>2026</span></aside>
+        <aside className="hero-card playlist-card"><small>MY FOCUS</small><div className="mini-art"><img src="/neural.jpg" alt="AIGC 项目缩略图" /></div><strong>AI visual<br />storytelling</strong><a href="#work">查看项目　→</a></aside>
+        <div className="hero-rail"><span>01.</span><em>MY PROFILE</em><i>●</i></div>
         <div className="hero-side">AI DESIGNER<br />MOTION DESIGNER</div>
         <div className="hero-meta"><span>SCROLL TO DISCOVER</span><span>01 — 05</span></div>
       </section>
