@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+
 const projectGroups = [
   { id: "01", title: "AIGC 设计", en: "AIGC DESIGN", intro: "从 AI 漫剧到真人短剧与商业视频，探索生成式影像的叙事和表达。", projects: [
     ["01", "AI 漫剧《别惹我，我防御拉满》", "角色 / 道具 / 场景设计", "/neural.jpg", "violet"],
@@ -25,6 +29,9 @@ const strengths = [
 ];
 
 export default function Home() {
+  const rails = useRef<Array<HTMLDivElement | null>>([]);
+  const scrollRail = (index: number, direction: number) => rails.current[index]?.scrollBy({ left: direction * 390, behavior: "smooth" });
+
   return (
     <main>
       <section className="hero" id="home">
@@ -38,7 +45,7 @@ export default function Home() {
         <div className="hero-inner frame">
           <div className="hero-copy">
             <p className="hero-kicker">PORTFOLIO / 2026 &nbsp; · &nbsp; SHENZHEN</p>
-            <h1>黄丹琦<br /><em>个人作品集</em></h1>
+            <h1 className="hero-title"><span>{["黄", "丹", "琦"].map((letter, index) => <b key={letter} style={{ animationDelay: `${index * 0.14}s` }}>{letter}</b>)}</span><br /><em>{["个", "人", "作", "品", "集"].map((letter, index) => <b key={letter} style={{ animationDelay: `${(index + 3) * 0.14}s` }}>{letter}</b>)}</em><i className="title-spark title-spark-a">✦</i><i className="title-spark title-spark-b">✧</i><i className="title-spark title-spark-c">✦</i></h1>
             <p className="hero-intro">黄丹琦 / AI 设计师 · 动画设计师<br />以 AIGC、动画与视觉叙事，回应每一个新鲜的想法。</p>
             <div className="hero-actions"><a className="primary-btn" href="#work">浏览作品 <span>↓</span></a><a className="round-play" href="#about" aria-label="认识黄丹琦">↘</a></div>
           </div>
@@ -61,23 +68,23 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p className="eyebrow">你好，我是黄丹琦</p>
-            <h2>用新工具，<br /><em>做有温度的视觉。</em></h2>
+            <h2 className="float-title">用新工具，<br /><em>做有温度的视觉。</em></h2>
             <p className="lead">动画设计专业背景，现专注于 AI 设计与动画视觉制作。擅长从创意概念、分镜脚本到成片剪辑的完整创作流程，让技术服务于更鲜活的表达。</p>
             <div className="contact-list"><a href="tel:13226835811">132 2683 5811</a><a href="mailto:3276247746@qq.com">3276247746@qq.com</a><span>深圳 · 可接受合作邀约</span></div>
           </div>
           <aside className="quick-facts"><span>EDUCATION</span><strong>深圳职业技术大学</strong><small>动画设计 · 2023.09—2026.07</small><hr /><span>CERTIFICATE</span><strong>ACAA 动画设计师</strong><small>普通话二级乙等</small></aside>
         </div>
-        <div className="about-tools"><div><p className="section-number">TOOLS <span>— SKILLS</span></p><h3>工具只是延伸，<br /><em>想法才是核心。</em></h3></div><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div>
+        <div className="about-tools"><div><p className="section-number">TOOLS <span>— SKILLS</span></p><h3>熟练使用工具</h3></div><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div>
       </section>
 
       <section className="reel section" id="reel">
-        <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><h2>把所有画面，<br /><em>剪成一段心跳。</em></h2><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
+        <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><h2 className="float-title">把所有画面，<br /><em>剪成一段心跳。</em></h2><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button className="glass-float" type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
       </section>
 
       <section className="work section frame" id="work">
         <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
-        <div className="work-heading"><h2>三种方向，<br /><em>同一种创作热情。</em></h2><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
-        <div className="project-groups">{projectGroups.map((group) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>横向滑动浏览　→</small></div><div className="project-rail">{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><p>{note}</p><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></section>)}</div>
+        <div className="work-heading"><h2 className="float-title">三种方向，<br /><em>同一种创作热情。</em></h2><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
+        <div className="project-groups">{projectGroups.map((group, groupIndex) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>横向滑动浏览　→</small></div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><p>{note}</p><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div><div className="rail-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div></div></section>)}</div>
       </section>
 
       <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><h2>我的优势，<em>不止于熟练。</em></h2><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
