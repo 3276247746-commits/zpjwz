@@ -38,7 +38,7 @@ export default function Home() {
         <div className="hero-inner frame">
           <div className="hero-copy">
             <p className="hero-kicker">PORTFOLIO / 2026 &nbsp; · &nbsp; SHENZHEN</p>
-            <h1>让想象成为<br /><em>会呼吸的画面。</em></h1>
+            <h1>黄丹琦<br /><em>个人作品集</em></h1>
             <p className="hero-intro">黄丹琦 / AI 设计师 · 动画设计师<br />以 AIGC、动画与视觉叙事，回应每一个新鲜的想法。</p>
             <div className="hero-actions"><a className="primary-btn" href="#work">浏览作品 <span>↓</span></a><a className="round-play" href="#about" aria-label="认识黄丹琦">↘</a></div>
           </div>
