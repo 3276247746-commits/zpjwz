@@ -43,7 +43,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="portrait-block portrait-block--doodle">
             <span className="doodle doodle-star">✦</span><span className="doodle doodle-heart">♡</span><span className="doodle doodle-arrow">↗</span><span className="doodle doodle-flower">✿</span><span className="doodle doodle-wave">〰</span>
-            <img className="portrait-cutout" src="/huang-danqi-cutout.png" alt="黄丹琦" />
+            <img className="portrait-cutout portrait-white-bg" src="/huang-danqi-white.png" alt="黄丹琦" />
             <div className="portrait-stamp">HDQ<br /><small>CREATIVE<br />PROFILE</small></div>
           </div>
           <div className="about-copy">
