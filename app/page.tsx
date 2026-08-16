@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="skills section"><div className="frame"><div className="section-number">03 <span>— TOOLS & SKILLS</span></div><div className="skill-layout"><h2>工具只是延伸，<br /><em>想法才是核心。</em></h2><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div></div></section>
+      <section className="skills section"><div className="frame"><div className="section-number">03 <span>— TOOLS & SKILLS</span></div><div className="skill-layout"><h2>工具只是延伸，<br /><em>想法才是核心。</em></h2><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div></div></section>
 
       <section className="work section frame" id="work">
         <div className="section-number">04 <span>— SELECTED PROJECTS</span></div>
