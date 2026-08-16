@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "Visual Diary — AI × Motion × Visual Designer";
-const description = "AI 设计、动画设计与视觉设计作品集。把复杂技术变成有温度、有节奏的视觉体验。";
+const title = "黄丹琦 — AI 设计师 · 动画设计师";
+const description = "黄丹琦的 AI 设计与动画设计作品集，聚焦 AIGC、动态影像与视觉叙事。";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const image = `${protocol}://${host}/og.png`;
+  const image = `${protocol}://${host}/og-huang-danqi.png`;
 
   return {
     title,

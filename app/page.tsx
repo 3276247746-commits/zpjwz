@@ -1,136 +1,74 @@
 const projects = [
-  {
-    number: "01",
-    title: "Neural Architect",
-    subtitle: "生成式视觉系统 / Motion Identity",
-    image: "/neural.jpg",
-    tags: ["AI GENERATIVE", "MOTION DESIGN"],
-    className: "project project--wide",
-  },
-  {
-    number: "02",
-    title: "Synthetic Weave",
-    subtitle: "品牌影像 / Procedural CG",
-    image: "/weave.jpg",
-    tags: ["ART DIRECTION", "VFX"],
-    className: "project",
-  },
-  {
-    number: "03",
-    title: "Fluid Futures",
-    subtitle: "沉浸式视觉 / Experimental Film",
-    image: "/hero.jpg",
-    tags: ["VISUAL DESIGN", "3D MOTION"],
-    className: "project",
-  },
+  { id: "01", type: "AIGC DESIGN", title: "别惹我，我防御拉满", note: "AI动画短片 · 角色 / 道具 / 场景设计", image: "/neural.jpg", tone: "violet" },
+  { id: "02", type: "MOTION DESIGN", title: "萌萌马之神缘兄弟", note: "第二季动画 · 绑定 / 动作设计 / 创意策划", image: "/weave.jpg", tone: "blue" },
+  { id: "03", type: "ART DESIGN", title: "视觉叙事实验", note: "海报设计 · 分镜脚本 · AIGC短视频", image: "/hero.jpg", tone: "pink" },
+];
+
+const strengths = [
+  ["01", "AIGC 创意落地", "熟练运用 ChatGPT、Gemini、可灵、即梦等工具，将概念高效转化为图像、视频与动态内容。"],
+  ["02", "动画视觉表达", "覆盖二维动画、MG 动画、角色与场景设计，兼顾节奏、情绪与视觉叙事。"],
+  ["03", "从创意到成片", "完成脚本、分镜、生成、剪辑、调色与动效包装，让每一个想法形成完整作品。"],
+  ["04", "协作与成长", "具备团队组织与沟通能力，持续学习新工具，在变化中保持高效与创造力。"],
 ];
 
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="回到首页">
-          <span className="brand-mark">✦</span>
-          <span>VISUAL DIARY</span>
-        </a>
-        <nav aria-label="主导航">
-          <a className="active" href="#top">首页</a>
-          <a href="#work">作品</a>
-          <a href="#about">关于</a>
-          <a href="#contact">联系</a>
-        </nav>
-        <a className="header-action" href="mailto:hello@visualdiary.design" aria-label="发送合作邮件">
-          <span>LET&apos;S TALK</span><b>↗</b>
-        </a>
-      </header>
+      <section className="hero" id="home">
+        <video className="hero-video" autoPlay muted loop playsInline poster="/hero.jpg" aria-label="抽象流动视觉背景">
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-shade" />
+        <header className="nav-wrap">
+          <a className="wordmark" href="#home"><i>H</i><span>HUANG<br />DANQI</span></a>
+          <nav aria-label="主导航"><a href="#about">个人经历</a><a href="#work">精选项目</a><a href="#strength">个人优势</a></nav>
+          <a className="nav-contact" href="#contact">联系我 <b>↗</b></a>
+        </header>
+        <div className="hero-inner frame">
+          <p className="hero-kicker">PORTFOLIO / 2026 &nbsp; · &nbsp; SHENZHEN</p>
+          <h1>让想象成为<br /><em>会呼吸的画面。</em></h1>
+          <p className="hero-intro">黄丹琦 / AI 设计师 · 动画设计师<br />以 AIGC、动画与视觉叙事，回应每一个新鲜的想法。</p>
+          <div className="hero-actions"><a className="primary-btn" href="#work">浏览作品 <span>↓</span></a><a className="round-play" href="#about" aria-label="认识黄丹琦">↘</a></div>
+        </div>
+        <div className="hero-side">AI DESIGNER<br />MOTION DESIGNER</div>
+        <div className="hero-meta"><span>SCROLL TO DISCOVER</span><span>01 — 05</span></div>
+      </section>
 
-      <section className="hero" id="top">
-        <div className="spark spark-a">+</div>
-        <div className="spark spark-b">✦</div>
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="status-dot" /> AVAILABLE FOR CREATIVE PROJECTS</div>
-          <h1>I MAKE IDEAS<br /><em>MOVE &amp; GLOW.</em></h1>
-          <p>你好，我是一名专注于新叙事与新工具的<br />AI 设计师、动画设计师、视觉设计师。</p>
-          <div className="hero-actions">
-            <a className="button button--pink" href="#work">查看精选作品 <span>↘</span></a>
-            <a className="text-link" href="#about">认识我 <span>→</span></a>
+      <section className="about section frame" id="about">
+        <div className="section-number">01 <span>— ABOUT ME</span></div>
+        <div className="about-grid">
+          <div className="portrait-block"><img src="/huang-danqi.jpg" alt="黄丹琦" /><div className="portrait-stamp">HDQ<br /><small>CREATIVE<br />PROFILE</small></div></div>
+          <div className="about-copy">
+            <p className="eyebrow">你好，我是黄丹琦</p>
+            <h2>用新工具，<br /><em>做有温度的视觉。</em></h2>
+            <p className="lead">动画设计专业背景，现专注于 AI 设计与动画视觉制作。擅长从创意概念、分镜脚本到成片剪辑的完整创作流程，让技术服务于更鲜活的表达。</p>
+            <div className="contact-list"><a href="tel:13226835811">132 2683 5811</a><a href="mailto:3276247746@qq.com">3276247746@qq.com</a><span>深圳 · 可接受合作邀约</span></div>
           </div>
-        </div>
-
-        <div className="hero-visual" aria-label="抽象动态视觉作品">
-          <div className="image-arch"><img src="/hero.jpg" alt="流动的抽象三维视觉作品" /></div>
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="floating-note">
-            <span>CREATIVE FOCUS</span>
-            <strong>AI × MOTION</strong>
-            <small>Making technology feel human.</small>
-          </div>
-        </div>
-
-        <aside className="profile-card">
-          <div className="profile-top">
-            <img src="/portrait.jpg" alt="设计师肖像" />
-            <div><small>HELLO, I&apos;M</small><strong>YOUR NAME</strong></div>
-            <span className="profile-heart">♥</span>
-          </div>
-          <p>把复杂技术变成有温度、有节奏、有记忆点的视觉体验。</p>
-          <div className="profile-tags"><span>AI</span><span>MOTION</span><span>VISUAL</span></div>
-        </aside>
-
-        <div className="scroll-note">SCROLL TO EXPLORE <span>↓</span></div>
-      </section>
-
-      <section className="work-section" id="work">
-        <div className="section-heading">
-          <div><span className="kicker">SELECTED WORK / 2023—2026</span><h2>作品不是结果，<br /><em>是一次漂亮的冒险。</em></h2></div>
-          <p>从生成式视觉到品牌动画，我用设计建立一个完整世界，让每个概念都拥有自己的情绪、节奏与触感。</p>
-        </div>
-
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className={project.className} key={project.number}>
-              <div className="project-image"><img src={project.image} alt={`${project.title} 项目视觉`} /><span>{project.number}</span></div>
-              <div className="project-info">
-                <div><h3>{project.title}</h3><p>{project.subtitle}</p></div>
-                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <button aria-label={`查看 ${project.title} 案例`}>↗</button>
-              </div>
-            </article>
-          ))}
+          <aside className="quick-facts"><span>EDUCATION</span><strong>深圳职业技术大学</strong><small>动画设计 · 2023.09—2026.07</small><hr /><span>CERTIFICATE</span><strong>ACAA 动画设计师</strong><small>普通话二级乙等</small></aside>
         </div>
       </section>
 
-      <section className="about-section" id="about">
-        <div className="about-card about-intro">
-          <span className="card-index">01 / ABOUT</span>
-          <h2>在理性技术与<br /><em>感性表达之间。</em></h2>
-          <p>我的工作横跨概念策略、AI 创意、动态设计与视觉系统。喜欢从一句模糊的想法出发，把它推演成清晰、迷人、可持续生长的体验。</p>
-          <a href="#contact">更多关于我 <span>→</span></a>
-        </div>
-        <div className="about-card services-card">
-          <span className="card-index">02 / WHAT I DO</span>
-          <div className="service-row"><span className="service-icon">✦</span><div><strong>AI Creative Design</strong><small>概念探索・生成式视觉・创意工作流</small></div><b>01</b></div>
-          <div className="service-row"><span className="service-icon">◌</span><div><strong>Motion Design</strong><small>品牌动画・动态系统・影像包装</small></div><b>02</b></div>
-          <div className="service-row"><span className="service-icon">✺</span><div><strong>Visual Direction</strong><small>视觉识别・艺术指导・数字体验</small></div><b>03</b></div>
-        </div>
-        <div className="about-card mini-card">
-          <span className="mini-star">✦</span>
-          <strong>3 disciplines.<br />1 visual language.</strong>
-          <p>跨越工具与媒介，始终保持同一种清晰而鲜活的表达。</p>
+      <section className="experience section frame">
+        <div className="section-number">02 <span>— EXPERIENCE</span></div>
+        <div className="experience-heading"><h2>经历是我构建<br /><em>审美与方法的素材库。</em></h2><p>从校园设计竞赛到 AI 视频制作，我不断在真实项目中探索动画、技术与叙事的交点。</p></div>
+        <div className="timeline">
+          <article><div className="time">2026.06 — 2026.08</div><div><p className="role">AI 视频制作剪辑 <span>深圳优明环球科技有限公司</span></p><h3>把品牌想法转译成可传播的动态内容</h3><p>使用 AI 生成工具完成文生图、图生图、文生视频与动态效果优化；结合品牌调性撰写脚本、设计分镜，并通过 After Effects、剪映完成剪辑、调色与音效合成。</p></div></article>
+          <article><div className="time">2025.12 — 2026.06</div><div><p className="role">动画设计师 / AI 漫剧制作 <span>深圳市凯乐新联文化科技有限公司</span></p><h3>以角色、场景和动作，搭起一个动画世界</h3><p>参与《萌萌马之神缘兄弟》第二季动画绑定与动作设计，负责角色、道具、场景设计及 AI 动画视频制作，独立完成美术设计到成片输出的流程。</p></div></article>
+          <article><div className="time">2024 — 2026</div><div><p className="role">校园经历 <span>设计与美术 / 团队合作与领导</span></p><h3>在竞赛与社团中扩展表达的边界</h3><p>获得蓝桥杯视觉艺术设计赛省赛二等奖、大广赛二等奖等；担任 Jazz 舞队队长，负责成员排训、社团活动与团队协作。</p></div></article>
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
-        <div className="contact-copy">
-          <span className="kicker">HAVE A PROJECT IN MIND?</span>
-          <h2>LET&apos;S MAKE<br /><em>SOMETHING LOVELY.</em></h2>
-        </div>
-        <a className="contact-bubble" href="mailto:hello@visualdiary.design">
-          <span>START A PROJECT</span><b>↗</b><small>hello@visualdiary.design</small>
-        </a>
-        <div className="footer-line"><span>AI × MOTION × VISUAL DESIGN</span><span>© 2026 VISUAL DIARY</span><a href="#top">BACK TO TOP ↑</a></div>
+      <section className="skills section"><div className="frame"><div className="section-number">03 <span>— TOOLS & SKILLS</span></div><div className="skill-layout"><h2>工具只是延伸，<br /><em>想法才是核心。</em></h2><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div></div></section>
+
+      <section className="work section frame" id="work">
+        <div className="section-number">04 <span>— SELECTED PROJECTS</span></div>
+        <div className="work-heading"><h2>三种方向，<br /><em>同一种创作热情。</em></h2><p>以下是对应 AIGC 设计、动画设计与美术设计的精选项目入口。</p></div>
+        <div className="project-stack">{projects.map((p) => <article className={`project-card ${p.tone}`} key={p.id}><div className="project-image"><img src={p.image} alt={p.title} /></div><div className="project-detail"><span>{p.id} / {p.type}</span><h3>{p.title}</h3><p>{p.note}</p><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div>
       </section>
+
+      <section className="strength section" id="strength"><div className="frame"><div className="section-number">05 <span>— MY STRENGTHS</span></div><h2>我的优势，<em>不止于熟练。</em></h2><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+
+      <footer className="contact-footer" id="contact"><div className="footer-glow" /><div className="frame footer-content"><p className="eyebrow">LET&apos;S CREATE SOMETHING NEW</p><h2>让下一个想法，<br /><em>从这里开始。</em></h2><div className="footer-links"><a href="mailto:3276247746@qq.com">3276247746@qq.com <span>↗</span></a><a href="tel:13226835811">132 2683 5811 <span>↗</span></a></div><div className="footer-bottom"><span>HUANG DANQI / AI & MOTION DESIGNER</span><a href="#home">BACK TO TOP ↑</a><span>© 2026</span></div></div></footer>
     </main>
   );
 }
