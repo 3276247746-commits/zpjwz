@@ -67,21 +67,20 @@ export default function Home() {
           </div>
           <aside className="quick-facts"><span>EDUCATION</span><strong>深圳职业技术大学</strong><small>动画设计 · 2023.09—2026.07</small><hr /><span>CERTIFICATE</span><strong>ACAA 动画设计师</strong><small>普通话二级乙等</small></aside>
         </div>
+        <div className="about-tools"><div><p className="section-number">TOOLS <span>— SKILLS</span></p><h3>工具只是延伸，<br /><em>想法才是核心。</em></h3></div><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div>
       </section>
 
       <section className="reel section" id="reel">
         <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><h2>把所有画面，<br /><em>剪成一段心跳。</em></h2><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
       </section>
 
-      <section className="skills section"><div className="frame"><div className="section-number">03 <span>— TOOLS & SKILLS</span></div><div className="skill-layout"><h2>工具只是延伸，<br /><em>想法才是核心。</em></h2><div className="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Blender</span><span>After Effects</span><span>Adobe Animate</span><span>Clip Studio Paint</span><span>ChatGPT</span><span>Gemini</span><span>可灵</span><span>即梦</span><span>Excel / Word</span></div></div></div></section>
-
       <section className="work section frame" id="work">
-        <div className="section-number">04 <span>— SELECTED PROJECTS</span></div>
+        <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
         <div className="work-heading"><h2>三种方向，<br /><em>同一种创作热情。</em></h2><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
         <div className="project-groups">{projectGroups.map((group) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>横向滑动浏览　→</small></div><div className="project-rail">{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><p>{note}</p><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></section>)}</div>
       </section>
 
-      <section className="strength section" id="strength"><div className="frame"><div className="section-number">05 <span>— MY STRENGTHS</span></div><h2>我的优势，<em>不止于熟练。</em></h2><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+      <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><h2>我的优势，<em>不止于熟练。</em></h2><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
 
       <footer className="contact-footer" id="contact"><div className="footer-glow" /><div className="frame footer-content"><p className="eyebrow">LET&apos;S CREATE SOMETHING NEW</p><h2>让下一个想法，<br /><em>从这里开始。</em></h2><div className="footer-links"><a href="mailto:3276247746@qq.com">3276247746@qq.com <span>↗</span></a><a href="tel:13226835811">132 2683 5811 <span>↗</span></a></div><div className="footer-bottom"><span>HUANG DANQI / AI & MOTION DESIGNER</span><a href="#home">BACK TO TOP ↑</a><span>© 2026</span></div></div></footer>
     </main>
