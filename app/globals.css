@@ -33,8 +33,11 @@ h1 em,h2 em { color:var(--pink); font-family:Georgia,"Songti SC",serif; font-wei
 .about { background:var(--milk); }
 .about-grid { display:grid; grid-template-columns: .8fr 1.35fr .62fr; gap:clamp(30px,5vw,100px); align-items:center; margin-top:70px; }
 .portrait-block { min-height:520px; position:relative; overflow:hidden; background:#e3d6d1; }
-.portrait-block img { width:100%; height:100%; position:absolute; object-fit:cover; object-position:center top; filter:grayscale(.18) contrast(1.04); }
-.portrait-block::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(83,23,47,.35),transparent 45%); }
+.portrait-block--doodle { isolation:isolate; background:radial-gradient(circle at 30% 22%,#fff8fd 0 6%,transparent 24%),radial-gradient(circle at 78% 82%,#d7c3ff 0,transparent 26%),linear-gradient(145deg,#f9d8ee,#e8dcff 53%,#f7c6e1); }
+.portrait-block--doodle::before { content:""; position:absolute; z-index:-1; inset:18px; border:2px dashed rgba(151,94,187,.38); border-radius:48% 52% 42% 58%; transform:rotate(-5deg); }
+.portrait-block--doodle::after { content:""; position:absolute; z-index:-1; inset:0; opacity:.48; background-image:radial-gradient(#af72bd 1.5px,transparent 1.5px); background-size:17px 17px; mask-image:linear-gradient(115deg,black,transparent 58%); }
+.portrait-cutout { position:absolute; z-index:1; width:128%; height:110%; right:-21%; bottom:-1%; object-fit:contain; object-position:center bottom; filter:drop-shadow(0 19px 16px rgba(104,57,124,.22)); }
+.doodle { position:absolute; z-index:2; color:#a859b7; font-family:"Comic Sans MS","Marker Felt",cursive; font-weight:700; line-height:1; text-shadow:0 1px 0 rgba(255,255,255,.8); }.doodle-star { top:10%; left:10%; font-size:39px; transform:rotate(-12deg); }.doodle-heart { right:9%; top:17%; font-size:46px; color:#ea79aa; transform:rotate(11deg); }.doodle-arrow { left:10%; bottom:23%; font-size:43px; transform:rotate(-15deg); }.doodle-flower { right:6%; bottom:27%; color:#ef7fb5; font-size:39px; }.doodle-wave { top:40%; left:3%; color:#9a73d2; font-size:60px; transform:rotate(-24deg); }
 .portrait-stamp { position:absolute; z-index:1; right:20px; bottom:20px; width:105px; height:105px; display:grid; align-content:center; padding-left:19px; border-radius:50%; color:white; background:var(--pink); font:38px/0.7 Georgia,serif; transform:rotate(-10deg); }
 .portrait-stamp small { margin-top:12px; font:8px/1.2 ui-monospace,monospace; letter-spacing:.12em; }
 .about-copy h2,.experience-heading h2,.work-heading h2,.skill-layout h2,.strength h2,.contact-footer h2 { margin:16px 0 26px; font-size:clamp(48px,4.5vw,88px); line-height:.95; }

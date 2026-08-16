@@ -41,7 +41,11 @@ export default function Home() {
       <section className="about section frame" id="about">
         <div className="section-number">01 <span>— ABOUT ME</span></div>
         <div className="about-grid">
-          <div className="portrait-block"><img src="/huang-danqi.jpg" alt="黄丹琦" /><div className="portrait-stamp">HDQ<br /><small>CREATIVE<br />PROFILE</small></div></div>
+          <div className="portrait-block portrait-block--doodle">
+            <span className="doodle doodle-star">✦</span><span className="doodle doodle-heart">♡</span><span className="doodle doodle-arrow">↗</span><span className="doodle doodle-flower">✿</span><span className="doodle doodle-wave">〰</span>
+            <img className="portrait-cutout" src="/huang-danqi-cutout.png" alt="黄丹琦" />
+            <div className="portrait-stamp">HDQ<br /><small>CREATIVE<br />PROFILE</small></div>
+          </div>
           <div className="about-copy">
             <p className="eyebrow">你好，我是黄丹琦</p>
             <h2>用新工具，<br /><em>做有温度的视觉。</em></h2>
