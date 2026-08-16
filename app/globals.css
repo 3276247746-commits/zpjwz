@@ -66,6 +66,9 @@ h1 em,h2 em { color:var(--pink); font-family:Georgia,"Songti SC",serif; font-wei
 .experience-points { display:grid; gap:10px; max-width:980px; margin:18px 0 0; padding:0; list-style:none; }
 .experience-points li { position:relative; padding-left:17px; color:#6d6269; font-size:14px; line-height:1.8; }
 .experience-points li::before { position:absolute; top:.72em; left:0; width:5px; height:5px; border-radius:50%; background:var(--pink); content:""; }
+.experience-groups { display:grid; gap:28px; margin-top:24px; }
+.experience-groups h4 { margin:0; color:#66535d; font-size:14px; font-weight:600; }
+.experience-groups .experience-points { margin-top:10px; }
 
 .skills { background:#e9e0dd; }
 .skill-layout { display:grid; grid-template-columns:1fr 1.15fr; gap:100px; align-items:center; margin-top:52px; }
