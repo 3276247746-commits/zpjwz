@@ -19,9 +19,9 @@ const projectGroups = [
   { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", controls: false, projects: [
     ["01", "《嗨萌马之神骏兄弟第二季》", "动画绑定 / 动作设计 / 创意策划", "/project-himengma.png", "blue"],
   ] },
-  { id: "03", title: "角色设计", en: "ART DESIGN / CHARACTER", intro: "角色设定、造型探索与视觉表达。", controls: true, projects: makeArtProjects("角色设计", "art-character", ["jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "png", "jpg", "jpg"]) },
-  { id: "04", title: "海报设计", en: "ART DESIGN / POSTER", intro: "用版式、色彩与图像语言传达主题。", controls: true, projects: makeArtProjects("海报设计", "art-poster", ["png", "png", "png", "jpg", "jpg", "jpg"]) },
-  { id: "05", title: "三维建模", en: "ART DESIGN / 3D", intro: "三维形体、材质细节与渲染呈现。", controls: true, projects: makeArtProjects("三维建模", "art-3d", ["png", "png", "png", "png", "png", "png", "png", "png", "png", "jpg"]) },
+  { id: "03", title: "角色设计", en: "ART DESIGN / CHARACTER", intro: "角色设定、造型探索与视觉表达。", controls: true, projects: makeArtProjects("角色设计", "art-gallery/art-character", Array(12).fill("jpg")) },
+  { id: "04", title: "海报设计", en: "ART DESIGN / POSTER", intro: "用版式、色彩与图像语言传达主题。", controls: true, projects: makeArtProjects("海报设计", "art-gallery/art-poster", Array(6).fill("jpg")) },
+  { id: "05", title: "三维建模", en: "ART DESIGN / 3D", intro: "三维形体、材质细节与渲染呈现。", controls: true, projects: makeArtProjects("三维建模", "art-gallery/art-3d", Array(10).fill("jpg")) },
 ];
 
 const strengths = [
