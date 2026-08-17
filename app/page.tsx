@@ -29,7 +29,7 @@ const strengths = [
 ];
 
 function MagicTitle({ first, second }: { first: string; second: string }) {
-  return <h2 className="magic-title"><span>{Array.from(first).map((letter, index) => <b key={`${letter}-${index}`} style={{ animationDelay: `${index * .08}s` }}>{letter}</b>)}</span><br /><em>{Array.from(second).map((letter, index) => <b key={`${letter}-${index}`} style={{ animationDelay: `${(index + first.length) * .08}s` }}>{letter}</b>)}</em><i>✦</i><i>✧</i></h2>;
+  return <h2 className="magic-title"><span>{Array.from(first).map((letter, index) => <b key={`${letter}-${index}`} style={{ animationDelay: `${index * .08}s` }}>{letter}</b>)}</span>{second && <><br /><em>{Array.from(second).map((letter, index) => <b key={`${letter}-${index}`} style={{ animationDelay: `${(index + first.length) * .08}s` }}>{letter}</b>)}</em></>}<i>✦</i><i>✧</i></h2>;
 }
 
 export default function Home() {
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p className="eyebrow">你好，我是黄丹琦</p>
-            <MagicTitle first="用新工具，" second="做有温度的视觉。" />
+            <MagicTitle first="个人介绍" second="" />
             <p className="lead">动画设计专业背景，现专注于 AI 设计与动画视觉制作。擅长从创意概念、分镜脚本到成片剪辑的完整创作流程，让技术服务于更鲜活的表达。</p>
             <div className="contact-list"><a href="tel:13226835811">132 2683 5811</a><a href="mailto:3276247746@qq.com">3276247746@qq.com</a><span>深圳 · 可接受合作邀约</span></div>
           </div>
@@ -82,13 +82,13 @@ export default function Home() {
       </section>
 
       <section className="reel section" id="reel">
-        <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><MagicTitle first="把所有画面，" second="剪成一段心跳。" /><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button className="glass-float" type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
+        <div className="frame"><div className="section-number">02 <span>— SHOWREEL</span></div><div className="reel-heading"><MagicTitle first="作品集混剪视频" second="" /><p>AI 设计、动画与美术创作的作品集混剪。</p></div><div className="reel-player"><img src="/hero.jpg" alt="作品集混剪视频封面" /><div className="reel-shade" /><div className="reel-center"><span>PORTFOLIO SHOWREEL</span><button className="glass-float" type="button" aria-label="播放作品集混剪视频">▶</button><strong>作品集混剪视频</strong><small>VIDEO WILL BE AVAILABLE SOON</small></div><div className="reel-footer"><span>HUANG DANQI / 2026</span><span>AI · MOTION · ART</span></div></div></div>
       </section>
 
       <section className="work section frame" id="work">
         <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
-        <div className="work-heading"><MagicTitle first="三种方向，" second="同一种创作热情。" /><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
-        <div className="project-groups">{projectGroups.map((group, groupIndex) => <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>点击两侧箭头浏览　→</small></div><div className="project-rail-wrap"><button className="rail-arrow rail-arrow-left" type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div><button className="rail-arrow rail-arrow-right" type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div></section>)}</div>
+        <div className="work-heading"><MagicTitle first="作品集" second="" /><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
+        <div className="project-groups">{projectGroups.map((group, groupIndex) => { const hasControls = group.id === "01"; return <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>{hasControls ? "点击按钮浏览项目" : "横向滑动浏览　→"}</small>{hasControls && <div className="aigc-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div>}</div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></div></section>; })}</div>
       </section>
 
       <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><MagicTitle first="我的优势，" second="不止于熟练。" /><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
