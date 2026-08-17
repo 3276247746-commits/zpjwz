@@ -16,7 +16,7 @@ const projectGroups = [
     ["05", "AI 视频制作（跨境电商产品）", "产品视觉 / 脚本 / 剪辑", "/project-cross-border-video.png", "violet"],
     ["06", "AI 美术资产设计", "角色资产 / 场景资产 / 视觉设定", "/project-ai-art-assets.png", "pink"],
   ] },
-  { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", controls: false, projects: [
+  { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", controls: true, projects: [
     ["01", "《嗨萌马之神骏兄弟第二季》", "动画绑定 / 动作设计 / 创意策划", "/project-himengma.png", "blue"],
   ] },
   { id: "03", title: "角色设计", en: "ART DESIGN / CHARACTER", intro: "角色设定、造型探索与视觉表达。", controls: true, projects: makeArtProjects("角色设计", "art-gallery/art-character", Array(12).fill("jpg")) },
@@ -37,7 +37,10 @@ function MagicTitle({ first, second }: { first: string; second: string }) {
 
 export default function Home() {
   const rails = useRef<Array<HTMLDivElement | null>>([]);
-  const scrollRail = (index: number, direction: number) => rails.current[index]?.scrollBy({ left: direction * 390, behavior: "smooth" });
+  const scrollRail = (index: number, direction: number) => {
+    const rail = rails.current[index];
+    if (rail) rail.scrollBy({ left: direction * rail.clientWidth * .88, behavior: "smooth" });
+  };
 
   return (
     <main>
