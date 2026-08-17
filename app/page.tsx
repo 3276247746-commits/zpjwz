@@ -4,15 +4,15 @@ import { useRef } from "react";
 
 const projectGroups = [
   { id: "01", title: "AIGC 设计", en: "AIGC DESIGN", intro: "从 AI 漫剧到真人短剧与商业视频，探索生成式影像的叙事和表达。", projects: [
-    ["01", "AI 漫剧《别惹我，我防御拉满》", "角色 / 道具 / 场景设计", "/neural.jpg", "violet"],
-    ["02", "《星河》", "AIGC 视觉叙事 / 动态影像", "/hero.jpg", "pink"],
-    ["03", "AI 海外真人短剧", "AI 影像生成 / 后期包装", "/weave.jpg", "blue"],
-    ["04", "《影眼》", "概念设计 / AI 视觉实验", "/neural.jpg", "blue"],
-    ["05", "AI 视频制作（跨境电商产品）", "产品视觉 / 脚本 / 剪辑", "/weave.jpg", "violet"],
-    ["06", "AI 美术资产设计", "角色资产 / 场景资产 / 视觉设定", "/hero.jpg", "pink"],
+    ["01", "AI 漫剧《别惹我，我防御拉满》", "角色 / 道具 / 场景设计", "/project-defense.png", "violet"],
+    ["02", "《星河》", "AIGC 视觉叙事 / 动态影像", "/project-starlight.png", "pink"],
+    ["03", "AI 海外真人短剧", "AI 影像生成 / 后期包装", "/project-hidden-heiress.png", "blue"],
+    ["04", "《影眼》", "概念设计 / AI 视觉实验", "/project-shadow-eye.png", "blue"],
+    ["05", "AI 视频制作（跨境电商产品）", "产品视觉 / 脚本 / 剪辑", "/project-cross-border-video.png", "violet"],
+    ["06", "AI 美术资产设计", "角色资产 / 场景资产 / 视觉设定", "/project-ai-art-assets.png", "pink"],
   ] },
   { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", projects: [
-    ["01", "《嗨萌马之神骏兄弟第二季》", "动画绑定 / 动作设计 / 创意策划", "/weave.jpg", "blue"],
+    ["01", "《嗨萌马之神骏兄弟第二季》", "动画绑定 / 动作设计 / 创意策划", "/project-himengma.png", "blue"],
   ] },
   { id: "03", title: "美术类设计", en: "ART DESIGN", intro: "以角色、平面和三维语言，建立作品的视觉基调与想象空间。", projects: [
     ["01", "角色设计", "人物设定 / 造型探索 / 表情设计", "/hero.jpg", "pink"],
