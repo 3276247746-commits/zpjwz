@@ -96,6 +96,9 @@ h1 em,h2 em { color:var(--pink); font-family:Georgia,"Songti SC",serif; font-wei
 .project-image { position:absolute; inset:0; }
 .project-image img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .7s; }
 .project-card:hover .project-image img { transform:scale(1.05); }
+.project-card.artwork { background:rgba(255,255,255,.88); }
+.project-card.artwork .project-image { display:grid; place-items:center; background:#fff; }
+.project-card.artwork .project-image img { object-fit:contain; }
 .project-detail { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:27px; text-shadow:0 2px 12px rgba(0,0,0,.62); }
 .project-detail > span { color:#f2bacb; font:10px ui-monospace,monospace; letter-spacing:.1em; }.project-detail h3 { margin:16px 0 10px; font:500 31px/1.1 Georgia,"Songti SC",serif; }.project-detail p { margin:0; color:rgba(255,255,255,.67); font-size:12px; line-height:1.6; }.project-detail a { display:flex; justify-content:space-between; margin-top:26px; padding-top:14px; border-top:1px solid rgba(255,255,255,.3); font-size:12px; font-weight:700; }.project-detail b { font-size:18px; }
 

@@ -2,8 +2,13 @@
 
 import { useRef } from "react";
 
+const makeArtProjects = (category: string, prefix: string, extensions: string[]) => extensions.map((extension, index) => {
+  const order = String(index + 1).padStart(2, "0");
+  return [order, `${category} · ${order}`, category, `/${prefix}-${order}.${extension}`, "artwork"];
+});
+
 const projectGroups = [
-  { id: "01", title: "AIGC 设计", en: "AIGC DESIGN", intro: "从 AI 漫剧到真人短剧与商业视频，探索生成式影像的叙事和表达。", projects: [
+  { id: "01", title: "AIGC 设计", en: "AIGC DESIGN", intro: "从 AI 漫剧到真人短剧与商业视频，探索生成式影像的叙事和表达。", controls: true, projects: [
     ["01", "AI 漫剧《别惹我，我防御拉满》", "角色 / 道具 / 场景设计", "/project-defense.png", "violet"],
     ["02", "《星河》", "AIGC 视觉叙事 / 动态影像", "/project-starlight.png", "pink"],
     ["03", "AI 海外真人短剧", "AI 影像生成 / 后期包装", "/project-hidden-heiress.png", "blue"],
@@ -11,14 +16,12 @@ const projectGroups = [
     ["05", "AI 视频制作（跨境电商产品）", "产品视觉 / 脚本 / 剪辑", "/project-cross-border-video.png", "violet"],
     ["06", "AI 美术资产设计", "角色资产 / 场景资产 / 视觉设定", "/project-ai-art-assets.png", "pink"],
   ] },
-  { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", projects: [
+  { id: "02", title: "传统动画设计", en: "TRADITIONAL ANIMATION", intro: "在角色表演、动作节奏与镜头语言中，打磨动画本身的生命力。", controls: false, projects: [
     ["01", "《嗨萌马之神骏兄弟第二季》", "动画绑定 / 动作设计 / 创意策划", "/project-himengma.png", "blue"],
   ] },
-  { id: "03", title: "美术类设计", en: "ART DESIGN", intro: "以角色、平面和三维语言，建立作品的视觉基调与想象空间。", projects: [
-    ["01", "角色设计", "人物设定 / 造型探索 / 表情设计", "/hero.jpg", "pink"],
-    ["02", "海报设计", "视觉传达 / 版式设计 / 品牌表达", "/neural.jpg", "violet"],
-    ["03", "三维建模", "Blender 建模 / 材质 / 渲染", "/weave.jpg", "blue"],
-  ] },
+  { id: "03", title: "角色设计", en: "ART DESIGN / CHARACTER", intro: "角色设定、造型探索与视觉表达。", controls: true, projects: makeArtProjects("角色设计", "art-character", ["jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "jpg", "png", "jpg", "jpg"]) },
+  { id: "04", title: "海报设计", en: "ART DESIGN / POSTER", intro: "用版式、色彩与图像语言传达主题。", controls: true, projects: makeArtProjects("海报设计", "art-poster", ["png", "png", "png", "jpg", "jpg", "jpg"]) },
+  { id: "05", title: "三维建模", en: "ART DESIGN / 3D", intro: "三维形体、材质细节与渲染呈现。", controls: true, projects: makeArtProjects("三维建模", "art-3d", ["png", "png", "png", "png", "png", "png", "png", "png", "png", "jpg"]) },
 ];
 
 const strengths = [
@@ -88,7 +91,7 @@ export default function Home() {
       <section className="work section frame" id="work">
         <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
         <div className="work-heading"><MagicTitle first="作品集" second="" /><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
-        <div className="project-groups">{projectGroups.map((group, groupIndex) => { const hasControls = group.id === "01"; return <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>{hasControls ? "点击按钮浏览项目" : "横向滑动浏览　→"}</small>{hasControls && <div className="aigc-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div>}</div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></div></section>; })}</div>
+        <div className="project-groups">{projectGroups.map((group, groupIndex) => { const hasControls = group.controls; return <section className="project-group" key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>{hasControls ? "点击按钮浏览项目" : "横向滑动浏览　→"}</small>{hasControls && <div className="aigc-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div>}</div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3><a href="#contact">查看项目 <b>↗</b></a></div></article>)}</div></div></section>; })}</div>
       </section>
 
       <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><MagicTitle first="我的优势，" second="不止于熟练。" /><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
