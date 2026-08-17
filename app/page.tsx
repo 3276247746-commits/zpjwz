@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 
 const makeArtProjects = (category: string, prefix: string, extensions: string[]) => extensions.map((extension, index) => {
   const order = String(index + 1).padStart(2, "0");
@@ -39,7 +39,12 @@ export default function Home() {
   const rails = useRef<Array<HTMLDivElement | null>>([]);
   const scrollRail = (index: number, direction: number) => {
     const rail = rails.current[index];
-    if (rail) rail.scrollBy({ left: direction * rail.clientWidth * .88, behavior: "smooth" });
+    if (!rail) return;
+    const card = rail.querySelector<HTMLElement>(".project-card");
+    const cardStep = (card?.offsetWidth ?? 360) + 18;
+    const visibleCards = Math.max(1, Math.floor(rail.clientWidth / cardStep));
+    const nextPosition = rail.scrollLeft + direction * cardStep * visibleCards;
+    rail.scrollTo({ left: Math.max(0, Math.min(nextPosition, rail.scrollWidth - rail.clientWidth)), behavior: "smooth" });
   };
 
   return (
@@ -94,7 +99,7 @@ export default function Home() {
       <section className="work section frame" id="work">
         <div className="section-number">03 <span>— SELECTED PROJECTS</span></div>
         <div className="work-heading"><MagicTitle first="作品集" second="" /><p>从 AIGC 设计、传统动画到美术设计，以不同媒介回应同一个视觉想法。</p></div>
-        <div className="project-groups">{projectGroups.map((group, groupIndex) => { const hasControls = group.controls; const isArt = Number(group.id) >= 3; return <section className={`project-group ${isArt ? "art-showcase" : ""}`} key={group.id}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>{hasControls ? "点击按钮浏览作品" : "横向滑动浏览　→"}</small>{hasControls && <div className="aigc-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div>}</div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3>{!isArt && <a href="#contact">查看项目 <b>↗</b></a>}</div></article>)}</div></div></section>; })}</div>
+        <div className="project-groups">{projectGroups.map((group, groupIndex) => { const hasControls = group.controls; const isArt = Number(group.id) >= 3; return <Fragment key={group.id}>{group.id === "03" && <div className="art-collection-heading"><span>03 / ART DESIGN</span><h3>美术类设计</h3><p>角色设计、海报设计与三维建模作品。</p></div>}<section className={`project-group ${isArt ? "art-showcase" : ""}`}><div className="project-group-heading"><span>{group.id} / {group.en}</span><h3>{group.title}</h3><p>{group.intro}</p><small>{hasControls ? "点击按钮浏览作品" : "横向滑动浏览　→"}</small>{hasControls && <div className="aigc-controls"><button type="button" onClick={() => scrollRail(groupIndex, -1)} aria-label={`查看${group.title}上一个项目`}>←</button><button type="button" onClick={() => scrollRail(groupIndex, 1)} aria-label={`查看${group.title}下一个项目`}>→</button></div>}</div><div className="project-rail-wrap"><div className="project-rail" ref={(element) => { rails.current[groupIndex] = element; }}>{group.projects.map(([id, title, note, image, tone]) => <article className={`project-card ${tone}`} key={`${group.id}-${id}`}><div className="project-image"><img src={image} alt={title} /></div><div className="project-detail"><span>{group.id}.{id} / {group.en}</span><h3>{title}</h3>{!isArt && <a href="#contact">查看项目 <b>↗</b></a>}</div></article>)}</div></div></section></Fragment>; })}</div>
       </section>
 
       <section className="strength section" id="strength"><div className="frame"><div className="section-number">04 <span>— MY STRENGTHS</span></div><MagicTitle first="我的优势，" second="不止于熟练。" /><div className="strength-grid">{strengths.map(([number, title, body]) => <article key={number}><span>{number}</span><i>✦</i><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
