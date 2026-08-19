@@ -46,10 +46,7 @@ export default function Home() {
     if (maxPosition === 0) return;
     const currentPosition = railOffsets[index] ?? 0;
     const pageStep = Math.max(1, viewport.clientWidth - 12);
-    let nextPosition = currentPosition + direction * pageStep;
-    // Wrap at each end, so either button always opens another set of works.
-    if (nextPosition < 0) nextPosition = maxPosition;
-    if (nextPosition > maxPosition) nextPosition = 0;
+    const nextPosition = Math.max(0, Math.min(currentPosition + direction * pageStep, maxPosition));
     setRailOffsets((current) => ({ ...current, [index]: nextPosition }));
   };
 
